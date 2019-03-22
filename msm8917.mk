@@ -164,6 +164,10 @@ PRODUCT_COPY_FILES += \
     $(VENDOR_PATH)/gps/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     $(VENDOR_PATH)/gps/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
+# Hack for remove stuffs
+$(shell rm -rf hardware/qcom/display/liblight)
+$(shell rm -rf vendor/qcom/opensource/power)
+
 # Healthd
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
