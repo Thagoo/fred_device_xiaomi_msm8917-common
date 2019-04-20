@@ -48,7 +48,7 @@ PRODUCT_PACKAGES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService \
+#    AntHalService \
     antradio_app \
     libantradio
 
