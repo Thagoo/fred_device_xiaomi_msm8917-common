@@ -21,12 +21,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.min.duration.secs=30 \
     audio.offload.video=true \
     persist.vendor.audio.fluence.voicecall=true \
-    persist.vendor.audio.fluence.speaker=true \
-    persist.vendor.audio.fluence.voicerec=true \
+    persist.vendor.audio.fluence.speaker=false \
+    persist.vendor.audio.fluence.voicerec=false \
     persist.vendor.audio.speaker.prot.enable=false \
     persist.vendor.bt.enable.splita2dp=false \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
-    ro.af.client_heap_size_kbyte=7168 \
     ro.config.media_vol_steps=15 \
     ro.config.vc_call_vol_steps=7 \
     ro.vendor.audio.sdk.fluencetype=fluence \
@@ -64,8 +63,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.display.lmax=1280x720 \
     persist.vendor.qti.telephony.vt_cam_interface=1 \
     persist.camera.gyro.android=1 \
-    persist.camera.HAL3.enabled=0 \
+    persist.camera.HAL3.enabled=1 \
     persist.camera.is_type=1 \
+    vendor.camera.hal1.packagelist=com.whatsapp,com.intsig.camscanner,com.instagram.android,com.snapchat.android \
     vidc.enc.dcvs.extra-buff-count=2
 
 # CNE
@@ -92,6 +92,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fm.transmitter=false
 
+# Fling Velocity
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.min.fling_velocity=160 \
+    ro.max.fling_velocity=20000
+
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.gps.agps_provider=1
@@ -100,6 +105,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=0 \
     vendor.gralloc.enable_fb_ubwc=1 \
+    debug.enable.sglscale=1 \
     debug.hwui.use_buffer_age=false \
     debug.sf.hw=0 \
     debug.sf.latch_unsignaled=1 \
@@ -108,7 +114,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     persist.hwc.enable_vds=1 \
-    persist.sys.wfd.virtual=0 \
+    persist.hwc.mdpcomp.enable=true \
     vendor.display.disable_rotator_split=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.perf_hint_window=50
@@ -122,10 +128,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.qcom_parser=4176895 \
     media.stagefright.audio.sink=280 \
+    vendor.vidc.disable.split.mode=1 \
     vendor.vidc.enc.disable_bframes=1 \
     vendor.vidc.enc.disable_pframes=1 \
-    vendor.vidc.enc.narrow.searchrange=1 \
-    vendor.vidc.disable.split.mode=1
+    vendor.vidc.enc.disable.pq=true \
+    vendor.vidc.enc.narrow.searchrange=1
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -167,7 +174,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.sys.usb.config.extra=none
+    persist.vendor.usb.config.extra=none
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
